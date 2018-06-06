@@ -1,5 +1,6 @@
 package ng.com.ioi.blogx;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -246,5 +247,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void ViewNews(View view) {
     }
 }

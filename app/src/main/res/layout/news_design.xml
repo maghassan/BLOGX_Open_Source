@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="2dp"
-    app:cardBackgroundColor="@color/black">
+    app:cardBackgroundColor="@color/black"
+    android:id="@+id/newsViewClick">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,26 +14,39 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/title"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/actor"
             android:text="News Title"
-            android:textColor="@color/orange"/>
+            android:textColor="@color/orange"
+            android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:id="@+id/content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/actor"
+            android:text="News Content"
+            android:textColor="@color/orange" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Time"
             android:textColor="@color/orange"
-            android:text="News Content"/>
+            android:layout_margin="8dp"
+            android:fontFamily="@font/actor"
+            android:id="@+id/postTime"
+            android:textSize="10dp"/>
 
     </LinearLayout>
 

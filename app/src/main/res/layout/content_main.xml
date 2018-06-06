@@ -46,14 +46,16 @@
                     android:textColor="@color/black"
                     android:layout_marginStart="2dp"
                     android:layout_marginEnd="2dp"
-                    android:id="@+id/dollarChange"/>
+                    android:id="@+id/dollarChange"
+                    android:fontFamily="@font/actor"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="="
                     android:textColor="@color/black"
                     android:layout_marginStart="2dp"
-                    android:layout_marginEnd="2dp"/>
+                    android:layout_marginEnd="2dp"
+                    android:fontFamily="@font/actor"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -61,7 +63,8 @@
                     android:layout_marginStart="2dp"
                     android:layout_marginEnd="2dp"
                     android:textColor="@color/black"
-                    android:id="@+id/nairaChange"/>
+                    android:id="@+id/nairaChange"
+                    android:fontFamily="@font/actor"/>
 
             </GridLayout>
 
@@ -95,7 +98,8 @@
                             android:textAlignment="center"
                             android:textColor="@color/orange"
                             android:padding="8dp"
-                            android:id="@+id/bitcoin"/>
+                            android:id="@+id/bitcoin"
+                            android:fontFamily="@font/actor"/>
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
@@ -124,7 +128,8 @@
                             android:textAlignment="center"
                             android:textColor="@color/orange"
                             android:padding="8dp"
-                            android:id="@+id/litecoin"/>
+                            android:id="@+id/litecoin"
+                            android:fontFamily="@font/actor"/>
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
@@ -154,7 +159,8 @@
                             android:textAlignment="center"
                             android:textColor="@color/orange"
                             android:padding="8dp"
-                            android:id="@+id/ethereum"/>
+                            android:id="@+id/ethereum"
+                            android:fontFamily="@font/actor"/>
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
