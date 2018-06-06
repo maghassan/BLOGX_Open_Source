@@ -26,6 +26,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -42,7 +43,62 @@ public class MainActivity extends AppCompatActivity {
 
     private DataAdapter dataAdapter;
 
-    TextView Bitcoin;
+    TextView Bitcoin,Litecoin, Ethereum, nairaChange, dollarChange;
+
+    public void onStart(){
+        super.onStart();
+
+        //BitCoin
+        DocumentReference bitcoin = FirebaseFirestore.getInstance().document("CurrencyDB/BitcoinValue");
+        bitcoin.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
+                String bitcoinValue = documentSnapshot.getString("BitcoinValue");
+                Bitcoin.setText(bitcoinValue);
+            }
+        });
+
+        //LiteCoin
+        DocumentReference litecoin = FirebaseFirestore.getInstance().document("CurrencyDB/LitecoinValue");
+        litecoin.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
+                String liteValue = documentSnapshot.getString("LitecoinValue");
+                Litecoin.setText(liteValue);
+            }
+        });
+
+        //Ethereum
+        DocumentReference ethereum = FirebaseFirestore.getInstance().document("CurrencyDB/EthereumValue");
+        ethereum.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
+                String ethereumValue = documentSnapshot.getString("EthereumValue");
+                Ethereum.setText(ethereumValue);
+            }
+        });
+
+        //Naira
+        DocumentReference naira = FirebaseFirestore.getInstance().document("CurrencyDB/NairaValue");
+        naira.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
+                String nairaValue = documentSnapshot.getString("NairaValue");
+                nairaChange.setText(nairaValue);
+            }
+        });
+
+        //Naira
+        DocumentReference dollar = FirebaseFirestore.getInstance().document("CurrencyDB/DollarValue");
+        dollar.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
+                String dollarValue = documentSnapshot.getString("DollarValue");
+                dollarChange.setText(dollarValue);
+            }
+        });
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Bitcoin = findViewById(R.id.bitcoin);
+        Litecoin = findViewById(R.id.litecoin);
+        Ethereum = findViewById(R.id.ethereum);
+
+        nairaChange = findViewById(R.id.nairaChange);
+        dollarChange = findViewById(R.id.dollarChange);
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -93,10 +154,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        currencyDB = FirebaseFirestore.getInstance();
-
-        DocumentReference documentReference = FirebaseFirestore.getInstance().document("CurrencyDB/BitcoinValue");
-        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        //BitCoin
+        DocumentReference bitcoin = FirebaseFirestore.getInstance().document("CurrencyDB/BitcoinValue");
+        bitcoin.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if (documentSnapshot.exists()) {
@@ -104,6 +164,62 @@ public class MainActivity extends AppCompatActivity {
 
                     String bitcoinValue = documentSnapshot.getString("BitcoinValue");
                     Bitcoin.setText(bitcoinValue);
+                }
+            }
+        });
+
+        //LiteCoin
+        DocumentReference litecoin = FirebaseFirestore.getInstance().document("CurrencyDB/LitecoinValue");
+        litecoin.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    //DataModel dataModel = documentSnapshot.toObject(DataModel.class);
+
+                    String liteValue = documentSnapshot.getString("LitecoinValue");
+                    Litecoin.setText(liteValue);
+                }
+            }
+        });
+
+        //Ethereum
+        DocumentReference ethereum = FirebaseFirestore.getInstance().document("CurrencyDB/EthereumValue");
+        ethereum.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    //DataModel dataModel = documentSnapshot.toObject(DataModel.class);
+
+                    String ethereumValue = documentSnapshot.getString("EthereumValue");
+                    Ethereum.setText(ethereumValue);
+                }
+            }
+        });
+
+        //Naira
+        DocumentReference naira = FirebaseFirestore.getInstance().document("CurrencyDB/NairaValue");
+        naira.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    //DataModel dataModel = documentSnapshot.toObject(DataModel.class);
+
+                    String nairaValue = documentSnapshot.getString("NairaValue");
+                    nairaChange.setText(nairaValue);
+                }
+            }
+        });
+
+        //Dollar
+        DocumentReference dollar = FirebaseFirestore.getInstance().document("CurrencyDB/DollarValue");
+        dollar.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    //DataModel dataModel = documentSnapshot.toObject(DataModel.class);
+
+                    String dollarValue = documentSnapshot.getString("DollarValue");
+                    dollarChange.setText(dollarValue);
                 }
             }
         });
