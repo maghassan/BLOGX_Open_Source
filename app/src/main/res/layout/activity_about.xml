@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:textSize="24sp"
+            android:text="BLG X"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/biryani"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/advent_pro"
+            android:text="BLOG X App brings you realtime cryptocurrencies updates and also latest news on cryptocurrency market.\nUS Dollar to Nigerian Naira Converter."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/advent_pro"
+            android:text="Want to be an Admin for this app?\nContact the developer: +234 708 119 7352"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/advent_pro"
+            android:text="Contacts Information:\nWebsite: www.blogx.app\nEmail: aminu.personal@gmail.com\nDeveloped by: IOI - Innovative Online Industries"/>
+    </LinearLayout>
+
+</RelativeLayout>

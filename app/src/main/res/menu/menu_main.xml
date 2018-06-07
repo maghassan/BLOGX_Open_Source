@@ -3,8 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ng.com.ioi.blogx.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/about"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="About"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/calculator"
+        android:orderInCategory="100"
+        android:title="Calculator"
+        android:icon="@drawable/calculator"
+        app:showAsAction="always"/>
 </menu>

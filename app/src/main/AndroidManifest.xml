@@ -29,7 +29,9 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".ViewNews"></activity>
+        <activity android:name=".ViewNews" />
+        <activity android:name=".Converter" />
+        <activity android:name=".About"></activity>
     </application>
 
 </manifest>
