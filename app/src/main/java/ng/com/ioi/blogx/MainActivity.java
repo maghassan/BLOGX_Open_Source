@@ -18,6 +18,9 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
     private DataAdapter dataAdapter;
 
+    private AdView mAdView;
+
     TextView Bitcoin,Litecoin, Ethereum, nairaChange, dollarChange;
 
     public void onStart(){
@@ -57,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        MobileAds.initialize(this, "ca-app-pub-1843467277834046~6095659392");
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         Bitcoin = findViewById(R.id.bitcoin);
         Litecoin = findViewById(R.id.litecoin);
