@@ -1,5 +1,5 @@
 # BLOGX_Open_Source
-Android + Firebase Blog App [Aminu Muhammad]
+## Android + Firebase Blog App [Aminu Muhammad]
 
 STEPS TO SETUP PROJECT:
 1. Download the latest Android Studio, set it up weather on Windows, Linux or MacOS.
